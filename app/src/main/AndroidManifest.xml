@@ -16,7 +16,16 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MainActivity$NotificationPublisher" />
+        <receiver android:name=".PowerConnectedBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".NotificationPublisher" >
+            <intent-filter>
+                <action android:name="al.demo.alarmmanagerdemo.NOTIFY_ACTION"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
